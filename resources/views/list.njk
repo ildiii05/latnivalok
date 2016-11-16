@@ -1,0 +1,32 @@
+{% extends "layout" %}
+
+{% block content %}
+
+<div class="row">
+  {% for county in counties %}
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{ county.name }} <span class="label label-danger pull-right"> Összes megtekintése </span></div>
+      <ul class="list-group">
+        {% for sight in county.sight %}
+        <li class="list-group-item">
+          <a href="/sights/{{ sight.id }}">
+            {{ sight.name }}
+          </a>
+          <span class="label label-info pull-right">
+            {% for category in categories %}
+            {% if category.id == sight.category_id %}
+            {{ category.name }}
+            {% endif %}
+            {% endfor %}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
