@@ -1,0 +1,83 @@
+{% extends "layout" %}
+
+{% block content %}
+<h1>Új látványosság hozzáadása</h1>
+{% if old('errors') %}
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">Hibák</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      {% for error in old('errors') %}
+      <li>{{ error.message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+<form class="form-horizontal" method=POST enctype="multipart/form-data">
+<p>A *-gal megjelölt mezők kitöltése kötelező!</p>
+{{ csrfField }}
+    <div class="form-group">
+      <label for="name" class="col-lg-2 control-label">Név *</label>
+      <div class="col-lg-10">
+        <input class="form-control" id="name" name="name" placeholder="Név megadása" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="county_id" class="col-lg-2 control-label">Megye *</label>
+      <div class="col-lg-10">
+        <select class="form-control" id="county_id" name="county_id">
+          {% for county in counties %}
+          <option value="{{ county.id }}">{{county.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="approach" class="col-lg-2 control-label">Megközelíthetőség *</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="1" id="approach" name="approach"></textarea>
+        <span class="help-block">Adj egy rövid leírást a látványosság megközelíthetőségéről. Például milyen tömegközlekedéssel lehet odajutni Budapesten belül, vagy milyen autópályát kell használni a megyébe jutáshoz Budapestről kiindulva.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="details" class="col-lg-2 control-label">Leírás *</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="1" id="details" name="details"></textarea>
+        <span class="help-block">Írd le személyes véleményed, tapasztalatod az adott látványosságról.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Kategória *</label>
+      <div class="col-lg-10">
+        <div class="radio">
+            {% for category in categories %}
+        <div>
+          <label>
+            <input id="category_id" name="category_id" value="{{category.id}}"  type="radio">
+            {{ category.name }} 
+          </label>
+        </div>
+          {%endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="image" class="col-lg-2 control-label">Kép feltöltése</label>
+      <div class="col-lg-10">
+        <input type="file" name="image" id="image">
+        <span class="help-block">Tölts fel egy maximum 4 MB méretű, png, jpg vagy jpeg kiterjesztéssel rendelkező képet.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Mégse</button>
+        <button type="submit" class="btn btn-primary">Létrehozás</button>
+      </div>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout" %}
+
+{% block content %}
+<h1>Keresés a látványosságok között</h1>
+
+<form method="GET">
+{{ csrfField }}
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputname">Látványosság neve</label>
+          <input type="text" class="form-control" placeholder="Látványosság neve" id="inputname" name="inputname" value="{{ filters.name }}">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCategory">Kategória</label>
+          <select class="form-control" id="inputCategory" name="category">
+            <option value="">--</option>
+            {% for category in categories %}
+            {% if filters.category == category.id %}
+            <option value="{{ category.id }}" selected>{{ category.name }}</option>
+            {% else %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCounty">Megye</label>
+          <select class="form-control" id="inputCounty" name="county">
+            <option value="">--</option>
+            {% for county in counties %}
+            {% if filters.county == county.id %}
+            <option value="{{ county.id }}" selected>{{ county.name }}</option>
+            {% else %}
+            <option value="{{ county.id }}">{{ county.name }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <button class="btn btn-block btn-success" type="submit">Szűrés</button>
+        </div>
+      </div>
+    </div>
+</form>
+
+{% if filters.name !="" or filters.category != 0 or filters.county != 0 %}
+<h2>Keresésnek megfelelő nevezetességek: </h2>
+<ul>
+{% for sight in sights %}
+    <li><a href="/sights/{{ sight.id }}">{{ sight.name }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% if sights.length == 0 %}
+<p>Nincs a keresési feltételeknek megfelelő találat</p>
+{% endif %}
+{% endblock %}

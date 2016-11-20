@@ -1,0 +1,71 @@
+{% extends "layout" %}
+
+{% block content %}
+<h2>{{ sight.name }} </h2>
+{% if sight.imagepath != null  %}
+<p><img src="../{{sight.imagepath}}" alt="kéép" width=300px align=right class="img-thumbnail">
+{% endif %}
+<table width=500px>
+  <tbody>
+    <tr>
+      <td><b>Kategória: </b></td>
+      <td><span class="label label-success">{{ sight.category.name }}</span></td>
+    </tr>
+    <tr>
+      <td><b>Értékelés: </b></td>
+      <td><span class="label label-warning">{{sight.point}}★</span></td>
+    </tr>
+    <tr>
+      <td><b>Beküldte: </b></td>
+      <td><span class="label label-default">{{sight.user.username}}</span></td>
+    </tr>
+    <tr>
+      <td><b>Elhelyezkedés:</b></td>
+      <td><span class="label label-info">{{ sight.county.name }}</span></td>
+    </tr>
+  </tbody>
+</table> 
+<h3>Megközelíthetőség</h3>
+{{ sight.approach }}
+
+<h3>Leírás</h3>
+{{ sight.details }}
+<hr>
+{% if (points.length == 0 ) and (currentUser != null)  and (currentUser.id != sight.user_id )%}
+<h3>Értékeld a látványosságot! :)</h3>
+{% if old('errors') %}
+<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  Válassz ki egy opciót az értékelések közül!
+</div>
+{% endif %}
+<form class="form-horizontal" method=POST>
+{{ csrfField }}
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Pontszám</label>
+      <div class="col-lg-10">
+        <div class="radio">
+        <div><label><input id="point" name="point" value="1"  type="radio">★</label></div>
+        <div><label><input id="point" name="point" value="2"  type="radio">★★</label></div>
+        <div><label><input id="point" name="point" value="3"  type="radio">★★★</label></div>
+        <div><label><input id="point" name="point" value="4"  type="radio">★★★★</label></div>
+        <div><label><input id="point" name="point" value="5"  type="radio">★★★★★</label></div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Mégse</button>
+        <button type="submit" class="btn btn-primary">Értékelés</button>
+      </div>
+    </div>
+</form>
+{% endif %}
+{% if( currentUser == null) %}
+<b>A nevezetesség értékeléséhez kérlek jelentkezz be!</b>
+{% endif %}
+{% if (points.length != 0) and (currentUser != null ) %}
+Erre a nevezetességre már szavaztál!
+{% endif %}
+
+{% endblock %}

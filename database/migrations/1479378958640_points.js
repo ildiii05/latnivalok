@@ -8,7 +8,7 @@ class PointsTableSchema extends Schema {
     this.create('points', (table) => {
       table.increments()
       table.integer('user_id').unsigned().references('id').inTable('users')
-      table.integer('category_id').unsigned().references('id').inTable('categories')
+      table.integer('sight_id').unsigned().references('id').inTable('sights')
       table.integer('point').notNullable()
       table.timestamps()
     })

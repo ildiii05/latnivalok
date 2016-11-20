@@ -1,0 +1,25 @@
+{% extends "layout" %}
+
+{% block content %}
+<h2>Üdvözöllek, {{currentUser.username}}!</h2>
+Az általad megadott látványosságokat tudod itt kezelni.
+
+<table class="table table-striped" >
+  <tbody>
+      <tr>
+          <td><b>Látványosság neve</b></td>
+          <td><b>Adatok szerkesztése</b></td>
+          <td><b>Kép módosítása</b></td>
+          <td><b>Törlés</b></td>
+      </tr>
+      {% for sight in sights %}
+      <tr>
+          <td><a href="/sights/{{sight.id}}">{{sight.name}}</a></td>
+          <td><a href="/sights/{{sight.id}}/edit" class="btn btn-info btn-xs">Szerkesztés</a></td>
+          <td><a href="/sights/{{sight.id}}/editImage" class="btn btn-warning btn-xs">Kép szerkesztés</a></td>
+          <td><a href="/sights/{{sight.id}}/delete" class="btn btn-danger btn-xs">Törlés</a></td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table> 
+{% endblock %}

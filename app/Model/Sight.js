@@ -10,6 +10,10 @@ class Sight extends Lucid {
     county () {
         return this.belongsTo('App/Model/County')
     }
+
+    user () {
+        return this.belongsTo('App/Model/User')
+    }
 }
 
 module.exports = Sight

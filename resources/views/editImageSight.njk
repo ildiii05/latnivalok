@@ -1,0 +1,23 @@
+{% extends "layout" %}
+
+{% block content %}
+<h1>Kép hozzáadása / módosítása</h1>
+Látványosság neve: {{sight.name}}
+<form class="form-horizontal" method=POST enctype="multipart/form-data">
+{{ csrfField }}
+    <div class="form-group">
+      <label for="image" class="col-lg-2 control-label">Kép feltöltése</label>
+      <div class="col-lg-10">
+        <input type="file" name="image" id="image">
+        <span class="help-block">Tölts fel egy maximum 4 MB méretű, png, jpg vagy jpeg kiterjesztéssel rendelkező képet.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Mégse</button>
+        <button type="submit" class="btn btn-primary">Szerkesztés</button>
+      </div>
+    </div>
+</form>
+
+{% endblock %}

@@ -6,8 +6,16 @@
   {% for county in counties %}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <div class="panel panel-default">
-      <div class="panel-heading">{{ county.name }} <span class="label label-danger pull-right"> Összes megtekintése </span></div>
+      <div class="panel-heading">{{ county.name }} <a href="/county/{{county.id}}" class="btn btn-danger btn-xs pull-right">Összes megtekintése</a></div>
       <ul class="list-group">
+        {% if county.sight.length == 0 %}
+        <li class="list-group-item">
+          <p>Nincs ebben a megyében lévő látnivaló!
+        </li>
+        <li class="list-group-item">
+          <p>
+        </li>
+        {% else %}
         {% for sight in county.sight %}
         <li class="list-group-item">
           <a href="/sights/{{ sight.id }}">
@@ -22,6 +30,7 @@
           </span>
         </li>
         {% endfor %}
+        {% endif %}
       </ul>
     </div>
   </div>

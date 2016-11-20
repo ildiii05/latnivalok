@@ -25,8 +25,10 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <ul class="nav navbar-nav">
               <li><a href="/sights">Látványosságok böngészése</a></li>
+              <li><a href="/sights/search">Keresés a látványosságok között</a></li>
               {% if currentUser %}
               <li><a href="/sights/create">Látványosság létrehozása</a></li>
+              <li><a href="/home">Saját látványosságaim</a></li>
               {% endif %}
           </ul>
           
@@ -36,7 +38,7 @@
               <li><a href="/logout">Kilépés</a></li>
             {% else %}
               <li><a href="/login">Belépés</a></li>
-              <li><a href="/register">Regisztráció</a></li>
+              <li><a href="/regist">Regisztráció</a></li>
             {% endif %}
           </ul>
           </div>

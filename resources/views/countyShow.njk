@@ -1,0 +1,11 @@
+{% extends "layout" %}
+
+{% block content %}
+<h2>{{ county.name }} </h2>
+Ehhez a térséghez tartozó látványosságokat itt tekintheted meg:
+<ul>
+    {% for sight in sights %}
+    <li><a href="/sights/{{ sight.id }}">{{ sight.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

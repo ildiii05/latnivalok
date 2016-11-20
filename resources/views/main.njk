@@ -6,4 +6,18 @@
 <p> Ez a weboldal segítséget nyújthat egy hétvégi úticél kiválasztásához.
 <h2>A legjobb értékeléssel rendelkező nevezetességek:</h2>
 
+<table class="table table-striped" >
+  <tbody>
+      {% for sight in sights %}
+      <tr>
+          <td><a href="/sights/{{sight.id}}">{{sight.name}}</a></td>
+          <td>
+{% if sight.imagepath != null  %}
+<p><img src="../{{sight.imagepath}}" alt="kéép" width=80px align=center class="img-thumbnail">
+{% endif %}</td>
+          <td>{{sight.point}} ★</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table> 
 {% endblock %}
