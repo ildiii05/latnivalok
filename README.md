@@ -124,38 +124,38 @@ Látványosság hozzáadása
 Látványosság adatainak megtekintése, értékelése (bejelentkezett felhasználóként)
 
 ##### 2.2.2 Designtervek (végső megvalósítás kinézete):
-![](./images/home.png)
+![](./images/home.PNG)
 
 Kezdőlap
 
-![](./images/list.png)
+![](./images/list.PNG)
 
 Látványosságok listázása
 
 
-![](./images/search.png)
+![](./images/search.PNG)
 
 Keresés a látványosságok között
 
 
-![](./images/regist.png)
+![](./images/regist.PNG)
 
 Regisztráció
 
 
-![](./images/login.png)
+![](./images/login.PNG)
 
 Bejelentkezés
 
-![](./images/sights.png)
+![](./images/sights.PNG)
 
 Bejelentkezett felhasználóhoz tartozó látványosságok
 
-![](./images/new.png)
+![](./images/new.PNG)
 
 Látványosság hozzáadása
 
-![](./images/sight.png)
+![](./images/sight.PNG)
 
 Látványosság adatainak megtekintése, értékelése (bejelentkezett felhasználóként)
 
