@@ -78,8 +78,8 @@ Egy folyamat szemléltetése:
 - GET/sights/search: szűrés a látványosságok között
 - GET/sights/create: új látványosság létrehozása
 - POST/sights/create: új látványosság adatainak felküldése
-- GET/sights/:id: látványosság megtekintése
-- POST/sights/:id: látványosság értékelésének adatainak felküldése
+- GET/sights/:id : látványosság megtekintése
+- POST/sights/:id : látványosság értékelésének adatainak felküldése
 - GET/sights/:id/delete: látványosság törlése
 - GET/sights/:id/edit: látványosság adatainak szerkesztése
 - POST/sights/:id/edit: látványosság új adatainak felküldése
