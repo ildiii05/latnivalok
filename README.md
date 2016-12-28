@@ -227,3 +227,12 @@ Látványosság adatainak megtekintése, értékelése (bejelentkezett felhaszn�
 **Egyéb követelmény:** tetszőleges böngésző telepítése, JavaScript ajánlott
 
 **Program használata**
+1. Böngészőben nyissuk meg a főoldalt
+2. Jobb felső sarokban kattintsunk a Bejelentkezés gombra
+3. Bejelentkezés (Regisztráció) után a Listaoldalon találjuk magunkat, ahol megtekinthetjük és szerkeszthetjük az általunk megadott nevezetességeket.
+4. A felső menüsoron megjelent egy új gomb, a látványosság hozzáadása, erre kattintva tudunk új nevezetességet létrehozni
+5. Töltsük ki megfelelően az űrlapot.
+6. Hibás adatok esetén az űrlap felhívja a figyelmünket a hibára.
+7. Mentés gombra kattintva mentsük el az adatokat.
+8. A lista oldalon lévő funkciók: látványosság szerkesztése, kép módosítása valamint törlése
+9. Mások által létrehozott látványosságoknál lehetőségünk van azokat értékelni, majd a főoldalon a legjobb értékeléssel rendelkező helyeket megtekinteni.
