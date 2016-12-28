@@ -213,3 +213,4 @@ Látványosság adatainak megtekintése, értékelése (bejelentkezett felhaszn�
         - sightShow
       
 ### 4. Tesztelés
+...
