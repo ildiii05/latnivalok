@@ -213,4 +213,17 @@ Látványosság adatainak megtekintése, értékelése (bejelentkezett felhaszn�
         - sightShow
       
 ### 4. Tesztelés
-....
+#### 4.1 Tesztelési környezetek
+
+#### 4.2 Tesztállomány
+
+#### 4.3 Tesztesetek
+
+### 5. Felhasználói dokumentáció
+**Futtatáshoz szükséges operációs rendszer:** Tetszőleges operációs rendszer
+
+**A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva.
+
+**Egyéb követelmény:** tetszőleges böngésző telepítése, JavaScript ajánlott
+
+**Program használata**
