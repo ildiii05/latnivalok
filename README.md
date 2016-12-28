@@ -227,6 +227,7 @@ Látványosság adatainak megtekintése, értékelése (bejelentkezett felhaszn�
 **Egyéb követelmény:** tetszőleges böngésző telepítése, JavaScript ajánlott
 
 **Program használata**
+
 1. Böngészőben nyissuk meg a főoldalt
 2. Jobb felső sarokban kattintsunk a Bejelentkezés gombra
 3. Bejelentkezés (Regisztráció) után a Listaoldalon találjuk magunkat, ahol megtekinthetjük és szerkeszthetjük az általunk megadott nevezetességeket.
