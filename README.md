@@ -211,4 +211,5 @@ Látványosság adatainak megtekintése, értékelése (bejelentkezett felhaszn�
         - regist
         - sightSearch
         - sightShow
-    
+      
+### 4. Tesztelés
