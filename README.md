@@ -268,14 +268,27 @@ Látványosság törlése ajax segítségével
 ####A funkciók végrehajtásához szükséges állományok:
 
 1. Regisztráció validálás
+
 1.1 regist.njk átalakítása
+
 2. Látványosság validálás
+
 2.1 editSight.njk átalakítása
+
 2.2 newSight.njk átalakítása
+
 3. Bejelentkezés
+
 3.1 /scripts/login.js importálása a layout.njk-ba
+
 4. Regisztráció
+
 4.1 /scripts/regist.js importálása a layout.njk-ba
+
 5. törlés
+
 5.1 bejelentkezés után /home oldalon a törlés gombra kattintva a /scripts/delete.js állomány hívódik meg
+
 6. routes.js-be ajaxos végpontok felvétele
+
+7. SightController.js és UserController.js fájlokba az ajaxos funkciók felvétele
