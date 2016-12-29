@@ -237,3 +237,30 @@ Látványosság adatainak megtekintése, értékelése (bejelentkezett felhaszn�
 7. Mentés gombra kattintva mentsük el az adatokat.
 8. A lista oldalon lévő funkciók: látványosság szerkesztése, kép módosítása valamint törlése
 9. Mások által létrehozott látványosságoknál lehetőségünk van azokat értékelni, majd a főoldalon a legjobb értékeléssel rendelkező helyeket megtekinteni.
+
+### 6. Felhasználói élmény javítása JavaScript segítségével
+**1. funkció:**
+Regisztráció validáció - az űrlapmezőket üresen ne lehessen felküldeni
+- a felhasználónévnek minimum 4 karakterből kell állnia
+- email formátum ellenőrzése
+- a jelszónak minimum 6 karakternek kell lennie
+
+**2. funkció:**
+Új látványosság felvitele és szerkesztése esetén ellenőrzés, hogy ne legyenek nem megengedett adatok
+- a látványosság nevének maximum 50 karakter adható meg
+- a leírás és a megközelíthetőség megadásához minimum 20 karakterből álló leírást kell megadni
+- a kategória és a megye kiválasztása kötelező
+
+**3. funkció (AJAX):**
+Bejelentkező ablak feldobása bármelyik oldalon a fejlécre kattintva
+- hibás adatok esetén a hiba kiírása
+- a mégse gombra kattintva a felugró ablak eltűntetése
+
+**4. funkció (AJAX):**
+Regisztrációs ablak feldobása bármelyik oldalon a fejlécre kattintva
+- hibás adatok esetén a hiba kiírása
+- a mégse gombra kattintva a felugró ablak eltűntetése
+
+**5. funkció (AJAX):**
+Látványosság törlése ajax segítségével
+- bejelentkezés után a listaoldalon a törlés gombra kattintva a művelet ajax kérés segítségével hajtódik végre
