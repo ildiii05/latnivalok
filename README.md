@@ -214,10 +214,17 @@ Látványosság adatainak megtekintése, értékelése (bejelentkezett felhaszn�
       
 ### 4. Tesztelés
 #### 4.1 Tesztelési környezetek
+- Selenium IDE plugin telepítése firefox böngészőben (https://addons.mozilla.org/hu/firefox/addon/selenium-ide/)
+- A böngészőben a javascriptet kikapcsolom, a tesztesetek ilyen beállítások mellett készültek el.
 
 #### 4.2 Tesztállomány
-
-#### 4.3 Tesztesetek
+- **/test/create.html:** teszt látványosság létrehozása
+- **/test/delete.html:** a létre teszt látványosság törlése
+- **/test/edit.html:** a létrehozott teszt látványosság nevének módosítása
+- **/test/list-budapest.html:** a tárolt látványosságok közül a budapestiek listázása
+- **/test/list-zoo.html:** a tárolt látványosságok közül az állatkertek listázása
+- **/test/login.html:** admin felhasználó adataival belépés az oldalra
+- **/test/logout.html:** kijelentkezés az oldalról
 
 ### 5. Felhasználói dokumentáció
 **Futtatáshoz szükséges operációs rendszer:** Tetszőleges operációs rendszer
