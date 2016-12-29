@@ -275,3 +275,5 @@ Látványosság törlése ajax segítségével
 - bejelentkezés után /home oldalon a törlés gombra kattintva a /scripts/delete.js állomány hívódik meg
 - app/http/routes.js-be ajaxos végpontok felvétele
 - app/http/controllers/SightController.js és app/http/controllers/UserController.js fájlokba az ajaxos funkciók felvétele
+
+Regisztráció után új látványosság létrehozása, módosítása majd törlése folyamatról szekvenciadiagramm az előző beadandórészben, a 2.2.4-es pontban található.
