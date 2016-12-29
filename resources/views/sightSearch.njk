@@ -52,7 +52,7 @@
 </form>
 
 {% if filters.name !="" or filters.category != 0 or filters.county != 0 %}
-<h2>Keresésnek megfelelő nevezetességek: </h2>
+<h2>Keresésnek megfelelő nevezetességek ({{ sights.length }} találat): </h2>
 <ul>
 {% for sight in sights %}
     <li><a href="/sights/{{ sight.id }}">{{ sight.name }}</a></li>

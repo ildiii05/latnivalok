@@ -10,6 +10,7 @@
     {% block styles %}{% endblock %}
   </head>
   <body>
+    <div id="navContainer">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
           <div class="navbar-header">
@@ -37,14 +38,14 @@
               <li class="navbar-text">Szia, {{ currentUser.username }}!</li>
               <li><a href="/logout">Kilépés</a></li>
             {% else %}
-              <li><a href="/login">Belépés</a></li>
-              <li><a href="/regist">Regisztráció</a></li>
+              <li><a id="btnLogin" href="/login">Belépés</a></li>
+              <li><a id="btnRegist" href="/regist">Regisztráció</a></li>
             {% endif %}
           </ul>
           </div>
       </div>
     </nav>
-
+    </div>
     <div class="container">
         {% block content %}{% endblock %}      
     </div>
@@ -54,6 +55,10 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+    <!-- ajaxos bejelentkező ablak importálása-->
+    <script src="/scripts/login.js"></script>
+    <script src="/scripts/regist.js"></script>
+    {% endblock %}
   </body>
 </html>

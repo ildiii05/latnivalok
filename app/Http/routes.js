@@ -48,3 +48,10 @@ Route.post('/login', 'UserController.doLogin')
 
 //Kijelentkezés
 Route.get('/logout', 'UserController.logout')
+
+//AJAX
+Route.group('ajax', function () {
+  Route.get('/sights/:id/delete', 'SightController.ajaxDelete').middleware('auth')
+  Route.post('/login', 'UserController.ajaxLogin')
+  Route.post('/regist', 'UserController.ajaxRegister')
+}).prefix('/ajax')

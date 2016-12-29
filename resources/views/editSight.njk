@@ -1,5 +1,9 @@
 {% extends "layout" %}
 
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+{% endblock %}
+
 {% block content %}
 <h1>Látványosság szerkesztése</h1>
 
@@ -18,18 +22,18 @@
 </div>
 {% endif %}
 
-<form class="form-horizontal" method=POST>
+<form class="form-horizontal" action="" method="post" data-toggle="validator">
 {{ csrfField }}
     <div class="form-group">
       <label for="name" class="col-lg-2 control-label">Név</label>
       <div class="col-lg-10">
-        <input class="form-control" id="name" name="name" placeholder="Név megadása" type="text" value={{sight.name}}>
+        <input class="form-control" id="name" name="name" placeholder="Név megadása" type="text" value={{sight.name}} data-maxlength="50" required>
       </div>
     </div>
     <div class="form-group">
       <label for="county_id" class="col-lg-2 control-label">Megye</label>
       <div class="col-lg-10">
-        <select class="form-control" id="county_id" name="county_id">
+        <select class="form-control" id="county_id" name="county_id" required>
           {% for county in counties %}
           <option value="{{ county.id }}" {% if county.id == sight.county_id %} selected {% endif %}>{{county.name }}</option>
           {% endfor %}
@@ -39,14 +43,14 @@
     <div class="form-group">
       <label for="approach" class="col-lg-2 control-label">Megközelíthetőség</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="approach" name="approach">{{sight.approach}}</textarea>
+        <textarea class="form-control" rows="3" id="approach" name="approach" data-minlength="20" required >{{sight.approach}}</textarea>
         <span class="help-block">Adj egy rövid leírást a látványosság megközelíthetőségéről. Például milyen tömegközlekedéssel lehet odajutni Budapesten belül, vagy milyen autópályát kell használni a megyébe jutáshoz Budapestről kiindulva.</span>
       </div>
     </div>
     <div class="form-group">
       <label for="details" class="col-lg-2 control-label">Leírás</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="details" name="details">{{sight.details}}</textarea>
+        <textarea class="form-control" rows="3" id="details" name="details" data-minlength="20" required>{{sight.details}}</textarea>
         <span class="help-block">Írd le személyes véleményed, tapasztalatod az adott látványosságról.</span>
       </div>
     </div>

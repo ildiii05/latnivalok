@@ -375,7 +375,19 @@ class SightController {
        yield sight.save()
        yield response.redirect('back')
     }
-    
+
+    *ajaxDelete(request, response) {
+        const id = request.param('id')
+        const sight = yield Sight.find(id)
+
+        console.log(id)
+        if (!sight) {
+            response.notFound('Hiba történt a feldolgozás során!')
+            return
+        }
+        yield sight.delete()
+        response.ok({success: true});
+    }   
 }
 
 module.exports = SightController
